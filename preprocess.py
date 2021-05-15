@@ -1,4 +1,5 @@
 import numpy as np
+import math
 
 def noise_gating(time_series, threshold):
     series = np.array([])
@@ -7,12 +8,12 @@ def noise_gating(time_series, threshold):
             series = np.append(series, 0)
         else:
             series = np.append(series, time_series[i])
-    return series
+    return series   
 
-def zero_align(time_series):
-    series = np.array([])
-    for i in range(time_series.size):
-        if time_series[i] != 0:
-            series = time_series[i + 1:]
-            break
-    return series
+# def zero_align(time_series):
+#     series = np.array([])
+#     for i in range(time_series.size):
+#         if time_series[i] != 0:
+#             series = time_series[i + 1:]
+#             break
+#     return series
